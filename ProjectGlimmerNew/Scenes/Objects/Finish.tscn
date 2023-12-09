@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0, 1, 0.109375, 1 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Finish" type="Node2D"]
+position = Vector2( -196, -47 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -7.62939e-06, 0 )
+texture = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sprite" groups=["finish"]]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+modulate = Color( 0, 0, 0, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -7.62939e-06, -1.19209e-07 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 1 )

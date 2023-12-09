@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/GameScenes/Player.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.391061 )
+colors = PoolColorArray( 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 3 )
+
+[node name="Player" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 9.09495e-13, 0 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Area2D/CollisionShape2D"]
+position = Vector2( 7.62939e-06, 0 )
+scale = Vector2( 0.3125, 0.3125 )
+texture = SubResource( 2 )
